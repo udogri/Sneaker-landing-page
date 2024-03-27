@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-logo">
+                <img src="images/icon-menu.svg" class="menu-icon" id="menu-icon" onclick="menu()">
+                <h3>Sneakers</h3>
+            </div>
+            <div class="navlist">
+                <p>Collections</p>
+                <p>Men</p>
+                <p>Women</p>
+                <p>About</p>
+                <p>Contact</p>
+            </div>
+            <div class="icons">
+
+                <img src="images/icon-cart.svg" class="cart" id="show-hide-cart">
+                <span class="cart-icon-Quantity">0</span>
+
+                <img src="images/image-avatar.png" class="avatar">
+            </div>
+        </nav>
+    </header>
+    <div class="hero">
+
+        <div class="menu-options" id="menu-options">
+            <span class="close-menu" id="close-menu">&#10006</span>
+            <p>Collections</p>
+            <p>Men</p>
+            <p>Women</p>
+            <p>About</p>
+            <p>Contact</p>
+        </div>
+        <div class="hero-pictures">
+            <div class="slideArray">
+                <div class="hero-picture">
+                    <img src="images/image-product-1.jpg" class="hero-img">
+                </div>
+                <div class="hero-picture">
+                    <img src="images/image-product-2.jpg" class="hero-img">
+                </div>
+                <div class="hero-picture">
+                    <img src="images/image-product-3.jpg" class="hero-img">
+                </div>
+                <div class="hero-picture">
+                    <img src="images/image-product-4.jpg" class="hero-img">
+                </div>
+                <a class="pre" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="nex" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <div class="hero-options">
+                <img src="images/image-product-1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                <img src="images/image-product-2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                <img src="images/image-product-3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                <img src="images/image-product-4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            </div>
+        </div>
+        <div class="hero-text">
+            <h3>SNEAKER COMPANY</h3>
+            <h1>Fall Limited Edition <br> Sneakers</h1>
+            <p>These low-profile sneakers are your perfect casual wear <br>companion. Featuring a durable rubber outer
+                sole, they'll <br> withstand everything the weather can offer.</p>
+            <div class="prices">
+                <div class="price">
+                    <h2 id="amount-value"> $ 125.00</h2>
+                    <h3>50%</h3>
+                </div>
+                <h4>$250.00</h4>
+            </div>
+            <div class="buttons">
+                <div class="span">
+                    <button class="decreaseItemCountBtn" id="decreaseBtn" onclick="decreaseQuantity()">-</button>
+                    <span class="itemCount" id="totalItems">0</span>
+                    <button class="increaseItemCountBtn" id="increaseBtn" onclick="increaseQuantity()">+</button>
+                </div>
+                <button class="add-to-cart" id="cart-btn"><img src="images/icon-cartt.svg" class="cart-img">
+                    Add to cart
+                </button>
+            </div>
+        </div>
+
+
+        <div class="cart-menu" id="cart-men" style="display: none;">
+            <h3>cart</h3>
+            <hr>
+            <p class="empty-cart-message">Your cart is empty.</p>
+
+        </div>
+
+
+        <!-- The Modal/Lightbox -->
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&#10006</span>
+            <div class="modal-content">
+                <div class="slides">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="images/image-product-1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="images/image-product-2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="images/image-product-3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="images/image-product-4.jpg" style="width:100%">
+                    </div>
+                </div>
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+
+                <!-- Thumbnail image controls -->
+                <div class="Thumbnail">
+                    <div class="hero-options">
+                        <img class="demo" src="images/image-product-1.jpg" onclick="currentSlide(1)">
+                    </div>
+
+                    <div class="hero-options">
+                        <img class="demo" src="images/image-product-2.jpg" onclick="currentSlide(2)">
+                    </div>
+
+                    <div class="hero-options">
+                        <img class="demo" src="images/image-product-3.jpg" onclick="currentSlide(3)">
+                    </div>
+
+                    <div class="hero-options">
+                        <img class="demo" src="images/image-product-4.jpg" onclick="currentSlide(4)">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+<footer>
+    <p>Challenge by <a href="https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6">Frontend
+            mentor</a> code by Oruaro</p>
+</footer>
+
+</html>
